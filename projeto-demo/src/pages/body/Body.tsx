@@ -6,7 +6,8 @@ function Body() {
          <div id='teste'>
             <div id='dentro'>
                <div id='foto'>
-                  OIOIOI
+                  <div id='foto-dentro'>
+                  </div>
                </div>
                <div id='info-top'>
                   <div id='esquerda'>
