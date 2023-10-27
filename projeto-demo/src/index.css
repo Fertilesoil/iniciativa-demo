@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+header,
+nav {
+  font-family: 'Eczar', serif;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+}

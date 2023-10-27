@@ -1,0 +1,52 @@
+﻿header {
+   background-image: url(/src/assets/imgs/navbar.jpg);
+   background-position: center;
+   background-size:contain;
+   background-repeat: repeat;
+
+}
+
+header #nav-flex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 6rem;
+   max-width: 100rem;
+   margin: 0 auto;
+   height: 7rem;
+   font-family: 'Eczar', serif;
+}
+
+header #nav-flex #div-flex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+header #nav-flex .link-nome {
+   text-decoration: none;
+   font-size: 2.8rem;
+   color: #ffff;
+   font-weight: 700;
+   letter-spacing: -0.05rem;
+}
+
+header #nav-flex #ul-links {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   gap: 2rem;
+}
+
+header #nav-flex #ul-links li .link-format {
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight: 500;
+   color: #ffff;
+}
+
+header #nav-flex #ul-links li {
+   padding-top: 0.6rem;
+}
+
