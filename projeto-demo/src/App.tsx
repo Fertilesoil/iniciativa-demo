@@ -1,5 +1,6 @@
 import Header from './pages/header/Header';
 import Body from './pages/body/Body'
+import Resumo from './pages/resumo/Resumo';
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Header />
       <Body />
+      <Resumo />
     </>
   )
 }

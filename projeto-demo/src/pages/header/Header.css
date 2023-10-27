@@ -1,8 +1,8 @@
 ﻿header {
    background-image: url(/src/assets/imgs/navbar.jpg);
    background-position: center;
-   background-size:contain;
-   background-repeat: repeat;
+   background-size: cover;
+   background-repeat: no-repeat;
 
 }
 
