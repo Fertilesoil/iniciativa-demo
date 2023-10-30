@@ -1,14 +1,13 @@
-import Header from './pages/header/Header';
-import Body from './pages/body/Body'
-import Resumo from './pages/resumo/Resumo';
+import Header from './pages/header/Header'
+import Template from './pages/template/Template'
+
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Body />
-      <Resumo />
+    <Header />
+    <Template />
     </>
   )
 }

@@ -6,6 +6,13 @@
 
 }
 
+@media screen and (width <= 925px) {
+
+   .link-format {
+      display: none;
+   }
+}
+
 header #nav-flex {
    display: flex;
    justify-content: space-between;

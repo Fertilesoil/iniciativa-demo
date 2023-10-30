@@ -1,0 +1,48 @@
+﻿.grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr;
+   gap: 0px 0px;
+   grid-auto-flow: row;
+   grid-template-areas:
+      "titulo titulo titulo"
+      "card1 card1 resumo"
+      "card2 card2 resumo"
+      "card3 card3 resumo";
+}
+
+.titulo {
+   grid-area: titulo;
+   display: flex;
+   align-items: end;
+   margin-left: 120px;
+}
+
+
+.resumo {
+   grid-area: resumo;
+}
+
+.card1 {
+   grid-area: card1;
+}
+
+.card2 {
+   grid-area: card2;
+}
+
+.card3 {
+   grid-area: card3;
+}
+
+@media (width <= 1250px) {
+   .grid {
+      grid-template-areas: 
+      'titulo titulo titulo'
+      'card1 card1 card1'
+      'card2 card2 card2'
+      'card3 card3 card3'
+      'resumo resumo resumo'
+      ;
+   }
+}

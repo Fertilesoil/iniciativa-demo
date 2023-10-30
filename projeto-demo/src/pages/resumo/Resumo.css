@@ -10,7 +10,7 @@
     flex-direction: column;
     width: 395px;
     height: 338px;
-    border: 2px solid hsla(16, 78%, 76%, 0.30);
+    outline: 3px solid hsla(16, 78%, 76%, 0.30);
     box-shadow: 0px 0px 36px 0px rgba(203, 95, 93, 0.59);
     border-radius: 30px;
     background: rgba(242, 173, 148, 0.10);
