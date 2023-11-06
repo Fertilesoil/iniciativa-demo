@@ -1,0 +1,88 @@
+﻿header {
+   background-image: url(/src/assets/img/navbar.jpg);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+@media screen and (width <=925px) {
+
+   .link-format {
+      display: none;
+   }
+}
+
+header #nav-flex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 6rem;
+   max-width: 100rem;
+   margin: 0 auto;
+   height: 7rem;
+   font-family: 'Eczar', serif;
+}
+
+header #nav-flex #div-flex {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+header #nav-flex .link-nome {
+   text-decoration: none;
+   font-size: 2.8rem;
+   color: #ffff;
+   font-weight: 700;
+   letter-spacing: -0.05rem;
+   transition: 0.5s linear;
+
+}
+
+header #nav-flex .link-nome:hover {
+   text-decoration: none;
+   font-size: 2.8rem;
+   color: #ffff;
+   font-weight: 700;
+   letter-spacing: -0.05rem;
+   text-shadow:  4px 1px 0px rgba(242, 172, 146, 1),
+      -3px -3px 12px rgba(233, 100, 52, 0.2),
+      3px 3px 12px rgb(218, 133, 103, 0.3),
+      -7px -7px 30px rgba(218, 133, 103, 1);
+      transition: 0.3s linear;
+}
+
+
+header #nav-flex #ul-links {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   gap: 2rem;
+   transition: 0.5s linear;
+}
+
+header #nav-flex #ul-links .link-format:hover {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   list-style: none;
+   gap: 2rem;
+   text-shadow: 4px 1px 0px rgba(242, 172, 146, 1),
+      -4px -4px 12px rgba(233, 100, 52, 0.2),
+      4px 4px 12px rgb(218, 133, 103, 0.3),
+      -9px -9px 12px rgba(218, 133, 103, 1);
+      transition: 0.3s linear;
+}
+
+
+header #nav-flex #ul-links li .link-format {
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight: 500;
+   color: #ffff;
+}
+
+header #nav-flex #ul-links li {
+   padding-top: 0.6rem;
+}

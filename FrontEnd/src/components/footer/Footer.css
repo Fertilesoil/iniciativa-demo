@@ -1,0 +1,96 @@
+﻿footer {
+   background-image: url(../../assets/img/footer.png);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin-top: 2rem;
+}
+
+footer #display {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   max-width: 100rem;
+   margin: 0 auto;
+   height: 6rem;
+   padding: 0 6rem;
+}
+
+footer #display #cima {
+   display: flex;
+   justify-content: space-between;
+   width: 78rem;
+   height: 5rem;
+}
+
+footer #display #cima #home a {
+   text-decoration: none;
+   font-size: 2rem;
+   color: #ffff;
+   font-weight: 700;
+   letter-spacing: -0.03rem;
+   transition: 0.5s linear;
+}
+
+footer #display #cima #home a:hover {
+   text-shadow: 4px 1px 0px rgba(242, 172, 146, 1),
+   -3px -3px 12px rgba(233, 100, 52, 0.2),
+   3px 3px 12px rgb(218, 133, 103, 0.3),
+   -7px -7px 30px rgba(218, 133, 103, 1);
+   transition: 0.3s linear;
+}
+
+footer #display #cima #direcionamento {
+   display: flex;
+   gap: 2rem;
+}
+
+footer #display #cima #direcionamento .link-format {
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight: 500;
+   color: #ffff;
+   transition: 0.5s linear;
+}
+
+footer #display #cima #direcionamento .link-format:hover {
+   text-shadow: 4px 1px 0px rgba(242, 172, 146, 1),
+   -3px -3px 12px rgba(233, 100, 52, 0.2),
+   3px 3px 12px rgb(218, 133, 103, 0.3),
+   -7px -7px 30px rgba(218, 133, 103, 1);
+   
+   transition: 0.3s linear;
+}
+
+footer #display #baixo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 3rem;
+   width: 78rem;
+   margin-bottom: 0.32rem;
+}
+
+footer #display #baixo img {
+   width: 2rem;
+   height: 2rem;
+}
+
+footer #display #baixo #planeta {
+   width: 1.6rem;
+   height: 1.6rem;
+}
+
+footer #display #divisoria {
+   align-items: center;
+   width: 78rem;
+   height: 2rem;
+}
+
+footer #display #divisoria hr {
+   width: 78rem;
+}
