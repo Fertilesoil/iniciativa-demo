@@ -68,16 +68,16 @@ function Cadastro() {
     }
 
     return (
-        <>
             <div className='flex w-[100%] h-[40rem] justify-center items-center'>
                 <div className='w-[60rem] h-[35rem] flex justify-between bg-white shadow-xl'>
 
                     <div className='w-[30rem]'>
                         <form className='flex flex-col items-center justify-center p-[1rem] h-[0.5]' onSubmit={cadastrarNovoUsuario}>
-                            <div className='flex flex-col items-center'><div className='imagem-icone w-[5rem] h-[5rem]'></div>
-                                <h6>Iniciativa Atena</h6></div>
-                            <h2>Criar Conta</h2>
-                            <div className='w-[9rem] h-[2rem]'>
+                        <div className='primeiro-icone flex flex-col items-center'>
+                            <div className='imagem-icone w-[5rem] h-[5rem] mb-3'></div>
+                                <h6 className='text-[0.8rem] tracking-[0.1rem] mb-8'>Iniciativa Atena</h6></div>
+                            <h2 className='primeiro-icone text-[1.7rem] text-[#515961]' >Criar Conta</h2>
+                            <div className='w-[16.5rem] h-[2rem]'>
                                 <hr />
                             </div>
 
@@ -87,7 +87,7 @@ function Cadastro() {
                                     type="text"
                                     id="nome"
                                     name="nome"
-                                    placeholder="Entre com seu nome"
+                                    placeholder="entre com seu nome"
                                     value={usuario.nome}
                                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                                 />
@@ -154,7 +154,6 @@ function Cadastro() {
                     </div>
                 </div>
             </div>
-        </>
     )
 }
 
