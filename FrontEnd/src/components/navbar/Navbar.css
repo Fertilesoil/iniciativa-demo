@@ -5,13 +5,6 @@
    background-repeat: no-repeat;
 }
 
-@media screen and (width <=925px) {
-
-   .link-format {
-      display: none;
-   }
-}
-
 header #nav-flex {
    display: flex;
    justify-content: space-between;
@@ -85,4 +78,43 @@ header #nav-flex #ul-links li .link-format {
 
 header #nav-flex #ul-links li {
    padding-top: 0.6rem;
+}
+
+@media screen and (width <= 1242px) {
+   header #nav-flex {
+      padding: 0 2rem;
+      justify-content: initial;
+      gap: 5rem;
+   }
+
+   header #nav-flex #div-flex {
+      max-width: 20rem;
+   }
+
+   header #nav-flex #ul-links {
+      max-width: 20rem;
+   }
+}
+
+@media screen and (width <= 925px) {
+
+   #nav-flex #div-flex {
+      display: none;
+   }
+
+   #nav-flex #div-flex #ul-links {
+      display: none;
+   }
+
+   nav#nav-flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+@media screen and (width <= 610px) {
+   nav#nav-flex {
+      padding: 0;
+   }
 }

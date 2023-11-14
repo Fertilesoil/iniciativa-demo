@@ -1,10 +1,10 @@
 .imagem {
-    background-image: url("/src/assets/img/atena2.jpeg");
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 100%;
-    background-size: cover;
-    background-position: center;
+  background-image: url("/src/assets/img/atena2.jpeg");
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 .imagem-icone {
@@ -16,11 +16,56 @@
   height: 30px;
 }
 
+.usuario {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
 .usuario:focus {
   box-shadow: 0px 3px 5px 0px rgba(203, 95, 93, 0.59);
   outline: none;
 }
 
 .primeiro-icone {
-  font-family: 'Inter', sans-serif;
+font-family: 'Open Sans', sans-serif;
+}
+
+.botaouser {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media screen and (width <=1100px) {
+  .wrap2 {
+    max-width: 900px;
+  }
+}
+
+@media screen and (width <=920px) {
+
+  .wrap {
+    display: flex;
+    align-content: center;
+  }
+
+  .wrap2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .wrap .wrap2 .imagem {
+    display: none;
+  }
+
+  .wrap .wrap2 .form {
+    width: 100%;
+  }
+}
+
+@media screen and (width <=768px) {
+  .wrap {
+    max-width: 768px;
+  }
 }

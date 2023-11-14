@@ -22,6 +22,7 @@ section #caixahome #conteudohome h1{
 
 div#conteudohome{
     display: flex;
+    flex-direction: column;
     width: 40rem;
     height: 25rem;
     flex-direction: column;

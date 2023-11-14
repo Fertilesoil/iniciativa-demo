@@ -3,18 +3,24 @@ function Contato() {
    return (<section>
       <div id='teste'>
          <div id='dentro'>
+
             <div id='foto'>
                <div id='foto-dentro'>
                </div>
             </div>
+
             <div id='info-top'>
+
                <div id='esquerda'>
+
                   <span id='titulo-curso'>
                      Curso Yoga
                   </span>
+
                   <span id='valor-unitario'>
                      R$15,00
                   </span>
+                  
                   <div id='flex-quantidade'>
                      <select name="" id="select">
                         <option value="">1</option>
@@ -45,7 +51,9 @@ function Contato() {
                      R$30,00
                   </span>
                </div>
+
             </div>
+
          </div>
       </div>
    </section>)

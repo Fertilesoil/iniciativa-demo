@@ -94,3 +94,44 @@ footer #display #divisoria {
 footer #display #divisoria hr {
    width: 78rem;
 }
+
+@media screen and (width <=1460px) {
+   footer #display {
+      max-width: 1000px;
+   }
+
+   footer #display #cima {
+      max-width: 1000px;
+   }
+
+   footer #display #baixo {
+      max-width: 1000px;
+   }
+
+   footer #display #divisoria {
+      max-width: 1000px;
+   }
+
+   footer #display #divisoria hr {
+      max-width: 1000px;
+   }
+}
+
+@media screen and (width <=1000px) {
+   footer #display #cima {
+      display: none;
+   }
+
+   footer #display #divisoria {
+      display: none;
+   }
+
+   footer #display #baixo {
+      max-width: 350px;
+   }
+
+   footer #display {
+      justify-content: center;
+      align-items: center;
+   }
+}

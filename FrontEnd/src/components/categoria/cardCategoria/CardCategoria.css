@@ -1,0 +1,6 @@
+.img-categoria {
+    background-image: url(../../../assets/img/livros.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
