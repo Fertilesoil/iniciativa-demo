@@ -1,0 +1,49 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-areas: 
+    'card card resumo'
+    'card card resumo'
+    'card card resumo'
+    'card card resumo'
+    ;
+ }
+ 
+ .titulo {
+    background-color: blue;
+    grid-area: titulo;
+ }
+ 
+ .resumo {
+    background-color: cyan;
+    grid-area: resumo;
+ }
+ 
+ .card1 {
+    background-color: orange;
+    grid-area: card1;
+ }
+ 
+ .card2 {
+    background-color: orangered;
+    grid-area: card2;
+ }
+ 
+ .card3 {
+    background-color: greenyellow;
+    grid-area: card3;
+ }
+ 
+ 
+ @media (width <= 1250px) {
+    .grid {
+       grid-template-areas: 
+       'titulo titulo titulo'
+       'card1 card1 card1'
+       'card2 card2 card2'
+       'card3 card3 card3'
+       'resumo resumo resumo'
+       ;
+    }
+ }

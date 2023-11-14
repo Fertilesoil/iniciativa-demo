@@ -13,6 +13,8 @@ import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCat
 import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos';
 import FormularioProdutos from './components/produtos/formularioProdutos/FormularioProdutos';
 import DeletarProduto from './components/produtos/deletarProdutos/DeletarProdutos';
+import Carrinho from './pages/cart/Carrinho';
+import Grid from './pages/Grid/Grid'
 
 function App() {
 
@@ -36,7 +38,7 @@ function App() {
             <Route path="/cadastroProdutos" element={<FormularioProdutos />} />
             <Route path="/editarProdutos/:id" element={<FormularioProdutos />} />
             <Route path='/deletarProdutos/:id' element={<DeletarProduto />} />
-
+            <Route path='/carrinho' element={<Grid />} />
 
           </Routes>
         </div>

@@ -32,7 +32,7 @@ function Navbar() {
                   <Link to="/"><li className='link-format'>Noticias</li></Link>
                   <Link to="/contato"><li className='link-format'>Quem Somos</li></Link>
                   <Link to="/"><li className='link-format'>Meu Perfil</li></Link>
-                  <Link to="/"><li className='link-format'>Carrinho</li></Link>
+                  <Link to="/carrinho"><li className='link-format'>Carrinho</li></Link>
                   <Link to="/login"><li className='link-format'>Login</li></Link>
                </ul>
             </div>
