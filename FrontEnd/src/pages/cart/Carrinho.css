@@ -1,24 +1,25 @@
 #centralizar {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
-
 }
 
 #centralizar #dentro {
     display: flex;
     flex-direction: column;
-    width: 395px;
-    height: 338px;
+    align-items: center;
+    justify-content: center;
+    width: 25rem;
+    height: 30rem;
     outline: 3px solid hsla(16, 78%, 76%, 0.30);
-    box-shadow: 0px 0px 36px 0px rgba(203, 95, 93, 0.59);
-    border-radius: 30px;
+    box-shadow: 0px 0px 36px 0px rgba(203, 95, 93, 0.39);
+    border-radius: 1.8rem;
     background: rgba(242, 173, 148, 0.10);
 }
 
 .resumovalor {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
 }
 
 #centralizar #dentro #resumotitulo {
@@ -48,8 +49,6 @@
     background: #D973AB;
     border: none;
     outline: none;
-    
-
 }
 
 #centralizar #dentro #botaocompradiv {
@@ -63,7 +62,7 @@
     border-radius: 8px;
 }
 
-#centralizar #dentro #botaocompradiv img{
+#centralizar #dentro #botaocompradiv img {
     background-color: #D973AB;
     width: 16px;
     height: 16px;
@@ -72,4 +71,84 @@
 #centralizar #dentro #botaocompra a {
     text-decoration: none;
     color: whitesmoke;
+}
+
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    z-index: 1000;
+}
+
+.option-input:hover {
+    background: #9faab7;
+}
+
+.option-input:checked {
+    background: #D97398;
+}
+
+.option-input:checked::before {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    content: '';
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.75s;
+    background: #D97398;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+
+.option-input.radio {
+    border-radius: 50%;
+}
+
+.option-input.radio::after {
+    border-radius: 50%;
+}
+
+@keyframes click-wave {
+    0% {
+        height: 40px;
+        width: 40px;
+        opacity: 0.35;
+        position: relative;
+    }
+
+    100% {
+        height: 200px;
+        width: 200px;
+        margin-left: -80px;
+        margin-top: -80px;
+        opacity: 0;
+    }
 }

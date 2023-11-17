@@ -1,93 +1,118 @@
 import { useContext, useState } from 'react'
-
 import { AuthContext } from '../../contexts/AuthContext'
-
 import { useNavigate } from 'react-router-dom';
-
+import { CreditCard, Bank} from '@phosphor-icons/react'
 import './Carrinho.css'
 
-import Produto from '../../models/Produto';
 
 function Carrinho() {
-    
-    let navigate = useNavigate();
-    
-        function continuarComprando() {
-            navigate("/produtos")
-        }
-    
-        const { posts, limparCart, comprar } = useContext(AuthContext)
-    
-        function Comprar() {
-            comprar()
-            navigate("/perfil")
-        }
-    
-        const subtotal = posts.reduce((total, post) => {
-            return total + (post.valor * post.id);
-        }, 0)
-    
-        const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
+
+    const navigate = useNavigate();
+
+    function continuarComprando() {
+        navigate("/produtos")
+    }
+
+    const { posts, limparCart, comprar } = useContext(AuthContext)
+
+    function Comprar() {
+        comprar()
+        navigate("/produtos")
+    }
+
+    const subtotal = posts.reduce((total, post) => {
+        return total + (post.valor * post.id);
+    }, 0)
+
+    const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
 
     return (
-        <div id='centralizar'>
-            <div id='dentro'>
-                
+        <div>
 
-                <div className='resumovalor'>
-                <h3 className='font-bold text-xl dark:text-white'>Subtotal: R$ {new Intl.NumberFormat('pt-BR', {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                    }).format(subtotal)}</h3>
-                    <div className='btn-subtotal mt-3 p-2 '>
-                        <button className={`px-3 py-2 text-sm font-medium text-center text-white bg-red-800 transition-all duration-300 ease-in-out rounded-lg hover:bg-red-600 focus:outline-none ${subtotal > 0 ? 'dark:bg-red-500 dark:hover:bg-white dark:hover:text-black' : 'opacity-50 cursor-not-allowed'}`}
+            <div id='dentro'>
+
+                <div className='flex flex-col gap-10'>
+
+                    <div className='flex flex-col gap-8 borda-compra'>
+
+                        <h1 className='font-bold text-[1.5rem] mt-5 ml-5'>Selecione a forma de pagamento: </h1>
+                        {/* div das formas de pagamento */}
+
+                        <div className='flex justify-around items-center'>
+
+                            <div className='flex items-center justify-center w-[10rem] h-[4rem] outline-none'>
+                                <div className="flex items-center justify-center w-full h-[100%] ">
+                                    <div className='flex w-[100%]  justify-between items-center'>
+                                        <div className='flex items-center justify-center w-[10rem] h-[2rem] mb-5'>
+                                            <input
+                                                type="radio"
+                                                id="pix"
+                                                name="payment"
+                                                value="pix"
+                                                className='option-input radio'
+                                                onChange={() => setSelectedPayment('pix')} />
+                                        </div>
+                                        <div className='flex justify-center items-center gap-2'>
+                                            <label htmlFor="pix" className='ml-5'><p className='font-bold text-lg'>PIX </p></label>
+                                            <i><Bank size={28} color="#515961" weight="regular" /></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='flex items-center justify-center w-[10rem] h-[4rem] outline-none'>
+                                <div className='flex items-center justify-center w-full h-[100%]'>
+                                    <div className='flex w-[100%] justify-between items-center'>
+                                        <div className='flex items-center justify-center w-[10rem] h-[2rem] mb-5'>
+                                            <input
+                                                type="radio"
+                                                id="cartao"
+                                                name="payment"
+                                                value="cartao"
+                                                className='option-input radio'
+                                                onChange={() => setSelectedPayment('cartao')} />
+                                        </div>
+                                        <div className='flex justify-center items-center gap-2'>
+                                            <label htmlFor="cartão"><p className='font-bold text-lg'>Cartão</p></label>
+                                            <i><CreditCard size={28} color="#515961" weight="regular" /></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                        <div className='flex justify-center mb-3 '>
+                            <button
+                                className={`px-6 py-2 bg-[#D97398] text-sm font-[700] text-center text-[f5f5f5] rounded-lg`}
+                                onClick={Comprar}
+                                disabled={subtotal === 0 || !selectedPayment}> Finalizar Compra </button>
+                        </div>
+
+
+                    </div>
+
+                    <div className='flex justify-around gap-4'>
+
+                        <button className='px-4 py-2 text-[1.1rem] cursor-pointer font-medium border-none outline-none text-center text-[#f5f5f5] bg-[#F2AD94] transition-all duration-300 ease-in-out rounded-lg '
                             onClick={limparCart}
                             disabled={subtotal === 0}> Limpar carrinho
                         </button>
-                        <button className='ml-3 px-3 py-2 text-sm font-medium text-center text-white bg-[#03A678] transition-all duration-300 ease-in-out rounded-lg hover:bg-[#014040] focus:outline-none dark:bg-verde_claro2 dark:hover:bg-white dark:hover:text-black'
+
+                        <button className='px-4 py-2 text-[1.1rem] font-medium border-none outline-none text-center text-[#f5f5f5] bg-[#D97398] transition-all duration-300 ease-in-out rounded-lg '
                             onClick={continuarComprando}>Continuar comprando
                         </button>
+
                     </div>
 
-                <div className='resumovalor'>
-                <h1 className='font-bold text-lg dark:text-white mt-5 ml-5'>Selecione a forma de pagamento: </h1>
-                    {/* div das formas de pagamento */}
-                    <div className='pt-4 flex flex-inline  p-1 justify-center gap-10 border-2 border-lime-300 rounded-2xl'>
-                        <div className="mb-2 payment-option transition-transform duration-300 ease-in-out transform hover:scale-110 dark:bg-verde_escuro dark:border-gray-700">
-                            <div className='static itens-center'>
-                                <input
-                                    type="radio"
-                                    id="pix"
-                                    name="payment"
-                                    value="pix"
-                                    className='radio-button'
-                                    onChange={() => setSelectedPayment('pix')} />
-                                <label htmlFor="pix" className='ml-5'><p className='font-bold text-lg dark:text-white'>PIX ❖</p></label>
-                            </div>
-                        </div>
                 </div>
-                <div id='botaocompradiv'>
-                <div className='static itens-center'>
-                                <input
-                                    type="radio"
-                                    id="cartao"
-                                    name="payment"
-                                    value="cartao"
-                                    onChange={() => setSelectedPayment('cartao')} />
-                                <label htmlFor="cartão" className='ml-5'><p className='font-bold text-lg dark:text-white'>Cartão 💳</p></label>
-                            </div>
-                        </div>
-                    </div>
-                    {/* div botão finalizar */}
-                    <div className='flex justify-center mb-3 '>
-                        <button
-                            className={`px-3 mt-5 py-2 text-sm font-bold text-center text-black bg-lime-300 transition-all duration-300 ease-in-out rounded-lg hover:bg-lime-700 focus:outline-none  ${selectedPayment && subtotal > 0 ? 'dark:bg-verde_claro2 dark:hover:bg-white dark:hover:text-black' : 'opacity-50 cursor-not-allowed'}`}
-                            onClick={Comprar}
-                            disabled={subtotal === 0 || !selectedPayment}> Finalizar Compra </button>
-                    </div>
-                </div>
+
             </div>
-        </div>
+
+        </div >
     )
 }
 

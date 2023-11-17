@@ -1,11 +1,11 @@
 import Carrinho from "../cart/Carrinho"
-import CardProdutos from "../../components/produtos/cardProdutos/CardProdutos"
-
-import './Grid.css'
 import Produto from "../../models/Produto"
 import { useContext, useEffect, useState } from "react"
 import { buscar } from "../../services/Service"
 import { AuthContext } from "../../contexts/AuthContext"
+
+import './Grid.css'
+
 
 function Grid() {
 
@@ -26,38 +26,86 @@ function Grid() {
         }
     }
 
-    const { posts, limparCart, comprar } = useContext(AuthContext)
+    const { posts } = useContext(AuthContext)
+
+    const subtotal = posts.reduce((total, post) => {
+        return total + (post.valor * post.id);
+    }, 0)
+
 
     return (
-        <div>
-            <div className='grid'>
-                {/*<div className="titulo">
-               Carrinho
-            </div> */}
-
-                <div className="resumo">
-                    <Carrinho />
+        <>
+            <div className="flex justify-center items-center min-h-[40vh] w-[100%]">
+                <div className="w-[80%]">
+                    <h1 className="text-[3rem]">Resumo da compra</h1>
+                    <hr className="w-full" />
                 </div>
+            </div>
 
-                <div id='resumotitulo'>Resumo da compra</div>
-                <div className='resumovalor'>
-                {posts.map((post: Produto) => (
-                        (
-                            <div className=''>
-                                <p className='dark:text-white bg-lime-300 mb-3 border-2 rounded-2xl font-bold '>
-                                    {post.nome}:
-                                    R$ {new Intl.NumberFormat('pt-BR', {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                    }).format(post.valor)}
-                                </p>
+            <div className="flex justify-evenly min-h-[100vh]">
+
+                <div className="flex items-start justify-center min-h-[100vh] w-[50%]">
+
+
+
+                    <div className='flex flex-col w-full borda-compra gap-10'>
+
+                        <div>
+                            {posts.map((post: Produto) => (
+                                (
+                                    <div className=" flex justify-between px-5 items-center rounded-2xl font-bold h-[3rem]" key={post.id}>
+
+                                        <div>
+                                            <p>{post.nome}</p>
+                                        </div>
+
+                                        <div>
+                                            <p>R$ {new Intl.NumberFormat('pt-BR', {
+                                                minimumFractionDigits: 2,
+                                                maximumFractionDigits: 2,
+                                            }).format(post.valor)}</p>
+                                        </div>
+
+                                    </div>
+                                )
+                            ))}
+                        </div>
+                        <div className=" flex justify-between px-5 items-center rounded-2xl font-bold h-[3rem]">
+                            <div><h3 className='place-self-center font-bold text-xl p-2'>Subtotal:</h3></div>
+
+                            <div>
+                                <p>R$ {new Intl.NumberFormat('pt-BR', {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2,
+                                }).format(subtotal)}</p>
                             </div>
-                        )
-                    ))}
+
+                        </div>
+
+                    </div>
+
                 </div>
+
+                <div className="w-[30rem] min-h-[100vh] flex justify-center items-start">
+
+                    <div className="">
+                        <Carrinho />
+                    </div>
+
+                </div>
+
+
+
+                {/* <div className='grid'>
+            
+            <div className="titulo">
+                Carrinho
+            </div> 
+
+            </div>*/ }
 
             </div>
-        </div>
+        </>
     )
 }
 

@@ -28,7 +28,7 @@ interface AuthProviderProps {
 export const AuthContext = createContext({} as AuthContextProps)
 
 export function AuthProvider({ children }: AuthProviderProps) {
-    
+
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         id: 0,
         nome: "",
@@ -74,10 +74,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     function adicionarProduto(produto: Produto) {
         const itemExiste = posts.find((post) => post.id === produto.id);
 
-        if(itemExiste) {
+        if (itemExiste) {
             setItens((state) =>
                 state.map((post) =>
-                post.id === produto.id ? { ...post, id: post.id + 1 } : post
+                    post.id === produto.id ? { ...post, id: post.id + 1 } : post
                 )
             );
         } else {
@@ -87,26 +87,26 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     function removerProduto(produtoId: number) {
-     let itemRemovido = false; // Variável para controlar se um item foi removido
- 
-     const updateItens = posts.map((post) => {
-         if (post.id === produtoId) {
-             // Verifica se a id é maior que 1 antes de decrementar
-             if (post.id > 1) {
-                 itemRemovido = true; // Marca que um item foi removido
-                 return { ...post, id: post.id - 1 };
-             } else {
-                alert("O carrinho está vazio");
-                 return post;
-             }
-         }
-         return post;
-     });
-    
+        let itemRemovido = false; // Variável para controlar se um item foi removido
+
+        const updateItens = posts.map((post) => {
+            if (post.id === produtoId) {
+                // Verifica se a id é maior que 1 antes de decrementar
+                if (post.id > 1) {
+                    itemRemovido = true; // Marca que um item foi removido
+                    return { ...post, id: post.id - 1 };
+                } else {
+                    alert("O carrinho está vazio");
+                    return post;
+                }
+            }
+            return post;
+        });
+
         try {
             setItens(updateItens);
             alert("Uma unidade do produto foi removida do carrinho");
-        } catch(error:any) {
+        } catch (error: any) {
             console.log(error);
             alert('Ocorreu um erro ao remover o produto');
         }

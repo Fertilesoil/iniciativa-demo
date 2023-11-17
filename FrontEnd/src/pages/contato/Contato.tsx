@@ -1,7 +1,13 @@
 import '../contato/Contato.css'
 function Contato() {
-   return (<section>
-      <div id='teste'>
+   return (<section className='flex justify-center items-center'>
+
+      <div className='flex justify-center items-center w-[100%] h-[100vh]'>
+         <embed type="text/html" src="https://linktr.ee/iniciativatena?utm_source=linktree_profile_share&ltsid=831671e8-d8aa-429c-b127-1501d6da4b62" width="800" height="full" />
+      </div>
+
+
+      {/* <div id='teste'>
          <div id='dentro'>
 
             <div id='foto'>
@@ -55,7 +61,7 @@ function Contato() {
             </div>
 
          </div>
-      </div>
+      </div> */}
    </section>)
 }
 export default Contato

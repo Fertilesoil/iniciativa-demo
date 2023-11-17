@@ -1,49 +1,42 @@
+.borda-compra {
+   outline: 3px solid hsla(16, 78%, 76%, 0.30);
+   box-shadow: 0px 0px 36px 0px rgba(203, 95, 93, 0.39);
+   border-radius: 1.8rem;
+   background: rgba(242, 173, 148, 0.10);
+}
+
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr ;
-    grid-template-areas: 
-    'card card resumo'
-    'card card resumo'
-    'card card resumo'
-    'card card resumo'
-    ;
- }
- 
- .titulo {
-    background-color: blue;
-    grid-area: titulo;
- }
- 
- .resumo {
-    background-color: cyan;
-    grid-area: resumo;
- }
- 
- .card1 {
-    background-color: orange;
-    grid-area: card1;
- }
- 
- .card2 {
-    background-color: orangered;
-    grid-area: card2;
- }
- 
- .card3 {
-    background-color: greenyellow;
-    grid-area: card3;
- }
- 
- 
- @media (width <= 1250px) {
-    .grid {
-       grid-template-areas: 
-       'titulo titulo titulo'
-       'card1 card1 card1'
-       'card2 card2 card2'
-       'card3 card3 card3'
-       'resumo resumo resumo'
-       ;
-    }
- }
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr;
+   grid-template-areas:
+      'resumotitulo resumo'
+      'resumovalor resumo'
+      'resumovalor resumo'
+      'resumovalor resumo'
+   ;
+}
+
+.resumotitulo {
+   grid-area: resumotitulo;
+}
+
+.resumovalor {
+   grid-area: resumovalor;
+}
+
+.resumo {
+   grid-area: resumo;
+}
+
+@media (width <=1250px) {
+   .grid {
+      grid-template-areas:
+         'titulo titulo titulo'
+         'card1 card1 card1'
+         'card2 card2 card2'
+         'card3 card3 card3'
+         'resumo resumo resumo'
+      ;
+   }
+}
