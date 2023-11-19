@@ -35,32 +35,12 @@ function Carrinho() {
 
                     <div className='flex flex-col gap-8 borda-compra'>
 
-                        <h1 className='font-bold text-[1.5rem] mt-5 ml-5'>Selecione a forma de pagamento: </h1>
+                        <h1 className='padrao font-bold text-[1.3rem] text-center p-4'>Selecione a forma de pagamento: </h1>
                         {/* div das formas de pagamento */}
 
-                        <div className='flex justify-around items-center'>
+                        <div className='padrao flex justify-around items-center'>
 
-                            <div className='flex items-center justify-center w-[10rem] h-[4rem] outline-none'>
-                                <div className="flex items-center justify-center w-full h-[100%] ">
-                                    <div className='flex w-[100%]  justify-between items-center'>
-                                        <div className='flex items-center justify-center w-[10rem] h-[2rem] mb-5'>
-                                            <input
-                                                type="radio"
-                                                id="pix"
-                                                name="payment"
-                                                value="pix"
-                                                className='option-input radio'
-                                                onChange={() => setSelectedPayment('pix')} />
-                                        </div>
-                                        <div className='flex justify-center items-center gap-2'>
-                                            <label htmlFor="pix" className='ml-5'><p className='font-bold text-lg'>PIX </p></label>
-                                            <i><Bank size={28} color="#515961" weight="regular" /></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='flex items-center justify-center w-[10rem] h-[4rem] outline-none'>
+                        <div className='flex items-center justify-center w-[10rem] h-[4rem] outline-none'>
                                 <div className='flex items-center justify-center w-full h-[100%]'>
                                     <div className='flex w-[100%] justify-between items-center'>
                                         <div className='flex items-center justify-center w-[10rem] h-[2rem] mb-5'>
@@ -80,14 +60,34 @@ function Carrinho() {
                                 </div>
                             </div>
 
+                            <div className='flex items-center justify-center w-[10rem] h-[4rem] outline-none'>
+                                <div className="flex items-center justify-center w-full h-[100%] ">
+                                    <div className='flex w-[100%]  justify-between items-center'>
+                                        <div className='flex items-center justify-center w-[10rem] h-[2rem] mb-5'>
+                                            <input
+                                                type="radio"
+                                                id="pix"
+                                                name="payment"
+                                                value="pix"
+                                                className='option-input radio'
+                                                onChange={() => setSelectedPayment('pix')} />
+                                        </div>
+                                        <div className='flex justify-center items-center gap-2'>
+                                            <label htmlFor="pix" className='ml-5'><p className='font-bold text-lg'>Pix</p></label>
+                                            <i><Bank size={28} color="#515961" weight="regular" /></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
 
 
 
-                        <div className='flex justify-center mb-3 '>
+                        <div className='flex justify-center mb-2'>
                             <button
-                                className={`px-6 py-2 bg-[#D97398] text-sm font-[700] text-center text-[f5f5f5] rounded-lg`}
+                                className={`padrao px-6 py-2 bg-[#D97398] text-[0.9rem] font-[700] text-center text-[f5f5f5] rounded-lg`}
                                 onClick={Comprar}
                                 disabled={subtotal === 0 || !selectedPayment}> Finalizar Compra </button>
                         </div>
@@ -97,12 +97,12 @@ function Carrinho() {
 
                     <div className='flex justify-around gap-4'>
 
-                        <button className='px-4 py-2 text-[1.1rem] cursor-pointer font-medium border-none outline-none text-center text-[#f5f5f5] bg-[#F2AD94] transition-all duration-300 ease-in-out rounded-lg '
+                        <button className='padrao px-4 py-2 text-[0.9rem] cursor-pointer font-medium border-none outline-none text-center text-[#f5f5f5] bg-[#F2AD94] transition-all duration-300 ease-in-out rounded-lg '
                             onClick={limparCart}
                             disabled={subtotal === 0}> Limpar carrinho
                         </button>
 
-                        <button className='px-4 py-2 text-[1.1rem] font-medium border-none outline-none text-center text-[#f5f5f5] bg-[#D97398] transition-all duration-300 ease-in-out rounded-lg '
+                        <button className='padrao px-4 py-2 text-[0.9rem] font-medium border-none outline-none text-center text-[#f5f5f5] bg-[#D97398] transition-all duration-300 ease-in-out rounded-lg '
                             onClick={continuarComprando}>Continuar comprando
                         </button>
 

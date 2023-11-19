@@ -10,7 +10,7 @@ import './Grid.css'
 function Grid() {
 
     const [produtos, setProdutos] = useState<Produto[]>([]);
-    const { postsComprados } = useContext(AuthContext)
+    /* const { postsComprados } = useContext(AuthContext) */
 
     useEffect(() => {
         buscarPorProduto()
@@ -36,19 +36,19 @@ function Grid() {
     return (
         <>
             <div className="flex justify-center items-center min-h-[40vh] w-[100%]">
-                <div className="w-[80%]">
-                    <h1 className="text-[3rem]">Resumo da compra</h1>
-                    <hr className="w-full" />
+                <div className="w-[85%]">
+                    <h1 className="padrao text-[3rem] text-[#515961]">Resumo da compra</h1>
+                    <hr className="separador w-full border-[0.15rem] rounded-sm" />
                 </div>
             </div>
 
             <div className="flex justify-evenly min-h-[100vh]">
 
-                <div className="flex items-start justify-center min-h-[100vh] w-[50%]">
+                <div className="flex items-start justify-center min-h-[100vh] w-[45%]">
 
 
 
-                    <div className='flex flex-col w-full borda-compra gap-10'>
+                    <div className='padrao flex flex-col w-full borda-compra gap-10'>
 
                         <div>
                             {posts.map((post: Produto) => (
